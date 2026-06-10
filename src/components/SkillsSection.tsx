@@ -12,7 +12,7 @@ const skillsData = {
   frameworks: ["React.js", "Next.js", "Redux Toolkit", "TanStack Query", "React Query"],
   styling: ["Tailwind CSS", "Shadcn UI", "Material UI", "Responsive Design", "FontAwesome"],
   forms: ["React Hook Form", "Zod"],
-  tools: ["Git", "GitHub", "Axios", "RESTful APIs", "Vercel", "Vite"],
+  tools: ["Git", "GitHub", "Axios", "Vercel"],
 };
 
 const categoryColors: Record<string, string> = {

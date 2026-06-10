@@ -20,26 +20,65 @@ export const AppContext = createContext<AppContextType>({
 export const useApp = () => useContext(AppContext);
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<"en" | "ar">("en");
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [lang, setLangState] = useState<"en" | "ar">("en");
+  const [theme, setThemeState] = useState<"dark" | "light">("dark");
   const [activeSection, setActiveSection] = useState("home");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    const savedLang = localStorage.getItem("portfolio-lang") as "en" | "ar" | null;
+    const savedTheme = localStorage.getItem("portfolio-theme") as "dark" | "light" | null;
+    if (savedLang) setLangState(savedLang);
+    if (savedTheme) setThemeState(savedTheme);
+    setMounted(true);
+  }, []);
+
+  const setLang = (l: "en" | "ar") => {
+    setLangState(l);
+    localStorage.setItem("portfolio-lang", l);
+  };
+
+  const setTheme = (t: "dark" | "light") => {
+    setThemeState(t);
+    localStorage.setItem("portfolio-theme", t);
+  };
+
+  useEffect(() => {
+    if (!mounted) return;
     document.documentElement.className = theme;
-    document.body.className = `${lang === "ar" ? "rtl" : "ltr"} ${theme === "dark" ? "dark-mode" : ""}`;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  }, [lang, theme]);
+    document.documentElement.lang = lang;
+    document.body.className = `${lang === "ar" ? "rtl" : "ltr"} ${theme === "dark" ? "dark-mode" : ""}`;
+  }, [lang, theme, mounted]);
 
   return (
-    <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"} className={theme}>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <title>Asem Hamed – Frontend Developer</title>
         <meta name="description" content="Frontend Developer specializing in React & Next.js" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Inline script runs before React hydrates — no flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var lang = localStorage.getItem('portfolio-lang') || 'en';
+                  var theme = localStorage.getItem('portfolio-theme') || 'dark';
+                  document.documentElement.className = theme;
+                  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+                  document.documentElement.lang = lang;
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <AppContext.Provider value={{ lang, setLang, theme, setTheme, activeSection, setActiveSection }}>
-          {children}
+          <div style={{ visibility: mounted ? "visible" : "hidden" }}>
+            {children}
+          </div>
         </AppContext.Provider>
       </body>
     </html>
