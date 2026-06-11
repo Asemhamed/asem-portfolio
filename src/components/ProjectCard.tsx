@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useApp } from "@/app/layout";
 import { translations } from "@/libs/translations";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -92,9 +93,10 @@ export default function ProjectCard({ project, index }: Props) {
 
         {/* Actual screenshot */}
         {!imgError && (
-          <img
+          <Image
             src={project.poster}
             alt={project.title}
+            width={640} height={360}
             onLoad={() => setImgLoaded(true)}
             onError={() => setImgError(true)}
             style={{

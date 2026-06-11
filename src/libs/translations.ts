@@ -1,3 +1,5 @@
+
+
 export const translations = {
   en: {
     nav: {
@@ -69,7 +71,7 @@ export const translations = {
       icon: "🛒",
       github: "https://github.com/Asemhamed/Ecommerce-project",
       live: "https://ecommerce-ten-chi-57.vercel.app",
-      poster: "https://api.microlink.io/?url=https://ecommerce-ten-chi-57.vercel.app&screenshot=true&meta=false&embed=screenshot.url&force=false",
+      poster: "/E-Commercce.png",
       year: "2026",
     },
     {
@@ -80,7 +82,7 @@ export const translations = {
       icon: "💬",
       github: "https://github.com/Asemhamed/social-app",
       live: "https://social-app-eight-olive.vercel.app",
-      poster: "https://api.microlink.io/?url=https://social-app-eight-olive.vercel.app&screenshot=true&meta=false&embed=screenshot.url&force=false",
+      poster: "/Social-App.png",
       year: "2026",
     },
     {
@@ -91,7 +93,7 @@ export const translations = {
   icon: "🍽️",
   github: "https://github.com/Asemhamed/Yummy",
   live: "https://yummy-gamma-topaz.vercel.app/",
-  poster: "https://api.microlink.io/?url=https://yummy-gamma-topaz.vercel.app&screenshot=true&meta=false&embed=screenshot.url&force=false",
+  poster: "/Yummy.png",
   year: "2025",
 },
 {
@@ -102,7 +104,7 @@ export const translations = {
   icon: "🌤️",
   github: "https://github.com/Asemhamed/Weather",
   live: "https://yummy-lskn.vercel.app/",
-  poster: "https://api.microlink.io/?url=https://yummy-lskn.vercel.app&screenshot=true&meta=false&embed=screenshot.url&force=false",
+  poster: "/Weather.png",
   year: "2025",
 },
   ],
@@ -226,7 +228,7 @@ export const translations = {
       icon: "🛒",
       github: "https://github.com/Asemhamed/Ecommerce-project",
       live: "https://ecommerce-ten-chi-57.vercel.app",
-      poster: "https://api.microlink.io/?url=https://ecommerce-ten-chi-57.vercel.app&screenshot=true&meta=false&embed=screenshot.url&force=false",
+      poster: "/E-Commercce.png",
       year: "2026",
     },
     {
@@ -237,7 +239,7 @@ export const translations = {
       icon: "💬",
       github: "https://github.com/Asemhamed/social-app",
       live: "https://social-app-eight-olive.vercel.app",
-      poster: "https://api.microlink.io/?url=https://social-app-eight-olive.vercel.app&screenshot=true&meta=false&embed=screenshot.url&force=false",
+      poster: "/Social-App.png",
       year: "2026",
     },
         {
@@ -248,7 +250,7 @@ export const translations = {
       icon: "🍽️",
       github: "https://github.com/Asemhamed/Yummy",
       live: "https://yummy-gamma-topaz.vercel.app/",
-      poster: "https://api.microlink.io/?url=https://yummy-gamma-topaz.vercel.app&screenshot=true&meta=false&embed=screenshot.url&force=false",
+      poster: "/Yummy.png",
       year: "2025",
     },
     {
@@ -259,7 +261,7 @@ export const translations = {
       icon: "🌤️",
       github: "https://github.com/Asemhamed/Weather",
       live: "https://yummy-lskn.vercel.app/",
-      poster: "https://api.microlink.io/?url=https://yummy-lskn.vercel.app&screenshot=true&meta=false&embed=screenshot.url&force=false",
+      poster: "/Weather.png",
       year: "2025",
     },
   ],
